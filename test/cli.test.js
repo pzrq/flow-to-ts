@@ -235,7 +235,7 @@ describe("cli", () => {
 
     // Assert
     const output = fs.readFileSync(outputPath, "utf-8");
-    expect(output).toBe("const a: number = 5;");
+    expect(output).toBe("const a: number = 5;\n");
   });
 
   it("should not attempt to load the prettier config file", () => {

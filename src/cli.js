@@ -101,7 +101,8 @@ const cli = argv => {
       if (program.write) {
         const extension = detectJsx(inCode) ? ".tsx" : ".ts";
         const outFile = file.replace(/\.jsx?$/, extension);
-        fs.writeFileSync(outFile, outCode);
+        // No idea why newline at EOF is vanishing, quick fix to add them back
+        fs.writeFileSync(outFile, outCode + "\n");
       } else {
         console.log(outCode);
       }
